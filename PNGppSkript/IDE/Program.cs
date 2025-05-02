@@ -12,7 +12,7 @@ namespace IDE
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
-        public static void Main()
+        public static void Start()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
