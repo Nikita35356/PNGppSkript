@@ -1,4 +1,6 @@
-﻿namespace System.Drawing
+﻿using System.Drawing;
+
+namespace PNGppSkript.Api
 {
     class ColorApi
     {

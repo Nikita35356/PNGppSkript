@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using PNGppSkript.Compilator;
 
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Hello, World!22");
 
 Constructor t = new Constructor();
 t.AddByte(22);
