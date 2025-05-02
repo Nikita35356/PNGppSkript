@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TextEditor_GUI.Properties
+namespace IDE.Properties
 {
 
 

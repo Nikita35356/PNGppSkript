@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TextEditor_GUI
+namespace IDE
 {
     public partial class Form1 : Form
     {
@@ -30,6 +30,8 @@ namespace TextEditor_GUI
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "C# Files (*.cs)|*.cs|Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
             openFileDialog.Title = "Открыть файл";
+
+
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {

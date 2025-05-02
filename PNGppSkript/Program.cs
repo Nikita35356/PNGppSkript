@@ -9,3 +9,5 @@ Console.WriteLine("sys");
 
 t.AddByte(2);
 t.DebugGenerate("C:\\Users\\COMP\\source\\repos\\Nikita35356\\PNGppSkript\\PNGppSkript\\ttt.png");
+
+IDE.Program.Main();

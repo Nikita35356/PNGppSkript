@@ -1,4 +1,4 @@
-﻿namespace TextEditor_GUI
+﻿namespace IDE
 {
     partial class Form1
     {
