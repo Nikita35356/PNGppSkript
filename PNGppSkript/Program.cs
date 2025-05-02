@@ -6,5 +6,6 @@ Console.WriteLine("Hello, World!");
 Constructor t = new Constructor();
 List<string> list = new List<string>();
 string FilePath = Console.ReadLine();
+int number;
 
 list.AddRange(File.ReadAllLines(filepath));
