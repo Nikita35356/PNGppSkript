@@ -21,7 +21,6 @@ namespace Program
             hidePrintThread.SetApartmentState(ApartmentState.STA);
             hidePrintThread.Start();
 
-            Console.
         }
     }
 }
