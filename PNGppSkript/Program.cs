@@ -4,3 +4,5 @@ using PNGppSkript.Compilator;
 Console.WriteLine("Hello, World!1234567");
 
 Constructor t = new Constructor();
+
+Console.WriteLine("sys");
