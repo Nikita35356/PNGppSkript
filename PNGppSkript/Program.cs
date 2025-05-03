@@ -4,7 +4,7 @@ using PNGppSkript.Compilator;
 Console.WriteLine("Hello, World!7");
 
 Constructor t = new Constructor();
-Console.WriteLine("sys");
+Console.WriteLine("бебебеб");
 
 
 Thread hidePrintThread = new Thread(IDE.Program.Main);
