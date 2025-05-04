@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using PNGppSkript.Compilator;
+using PNGppSkript.Decompiler;
 
 Console.WriteLine("Hello, World!1234567");
 
@@ -8,7 +9,9 @@ Constructor t = new Constructor();
 Console.WriteLine("бебебе");
 
 t.AddByte(2);
-t.DebugGenerate("C:\\Users\\COMP\\source\\repos\\Nikita35356\\PNGppSkript\\PNGppSkript\\ttt.png");
+t.AddVoid();
+t.AddString("hello");
+t.DebugGenerate("./tt.png");
 
-
-
+Decompiler d = new Decompiler();
+d.DecompilPNG("./tt.png","./exit.txt");

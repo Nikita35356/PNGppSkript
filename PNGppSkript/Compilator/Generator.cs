@@ -24,7 +24,7 @@ namespace PNGppSkript.Compilator
                         byte[] b = Encoding.Unicode.GetBytes((string) args[y]);
                         for (int i = 0; i < b.Length / 2; i++)
                         {
-                            image.SetPixel(i + 1, y, Color.FromArgb(b[i * 2] + 128, b[(i * 2) + 1] + 128, 0));
+                            image.SetPixel(i + 1, y, Color.FromArgb(b[i * 2], b[(i * 2) + 1], 0));
                         }
                         image.SetPixel(b.Length / 2 + 1, y, ColorsT.EndString);
                     }
@@ -34,7 +34,7 @@ namespace PNGppSkript.Compilator
                         byte[] b = BitConverter.GetBytes((int)args[y]);
                         for (int i = 0; i < b.Length / 2; i++)
                         {
-                            image.SetPixel(i + 1, y, Color.FromArgb(b[i * 2] + 128, 0, b[(i * 2) + 1] + 128));
+                            image.SetPixel(i + 1, y, Color.FromArgb(b[i * 2], 0, b[(i * 2) + 1]));
                         }
                     }
                     else if (n.Equals("Double"))
@@ -43,7 +43,7 @@ namespace PNGppSkript.Compilator
                         byte[] b = BitConverter.GetBytes((double)args[y]);
                         for (int i = 0; i < b.Length / 2; i++)
                         {
-                            image.SetPixel(i + 1, y, Color.FromArgb(0, b[i * 2] + 128, b[(i * 2) + 1] + 128));
+                            image.SetPixel(i + 1, y, Color.FromArgb(0, b[i * 2], b[(i * 2) + 1]));
                         }
                     }
                     else if (n.Equals("Byte"))
