@@ -2,7 +2,7 @@
 using PNGppSkript.Compilator;
 using PNGppSkript.Decompiler;
 
-Console.WriteLine("Hello, World!1234567");
+Console.WriteLine("Ты попался на кликбейт");
 
 Constructor t = new Constructor();
 
