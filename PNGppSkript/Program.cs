@@ -17,3 +17,4 @@ t.DebugGenerate("./tt.png");
 Decompiler d = new Decompiler();
 d.DecompilPNGtoFile("./tt.png", "./exit.txt");
 Console.WriteLine(d.DecompilPNGtoString("./tt.png"));
+Console.ReadLine();
