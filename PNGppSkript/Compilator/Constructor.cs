@@ -7,10 +7,10 @@ namespace PNGppSkript.Compilator
     class Constructor
     {
         private List<String> list = new List<String>();
-        private List<object> args = new List<Object>();
+        private List<object?> args = new List<object?>();
         private int maxWidth = 1;
 
-        private void AddStep(String name, Object? v, int width)
+        private void AddStep(String name, object? v, int width)
         {
             list.Add(name);
             args.Add(v);

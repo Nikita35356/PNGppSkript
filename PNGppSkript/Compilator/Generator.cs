@@ -53,6 +53,7 @@ namespace PNGppSkript.Compilator
                     }
                 }
                 image.Save(toFile, ImageFormat.Png);
+                image.Dispose();
             }
         }
     }

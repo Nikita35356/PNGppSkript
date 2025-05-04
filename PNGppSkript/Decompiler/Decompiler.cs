@@ -15,8 +15,35 @@ namespace PNGppSkript.Decompiler
         private List<Color> pixels = new List<Color>();
         public void DecompilPNG(string fromPngFile, string toTextFile)
         {
+            List<string> lines = new List<string>();
+            PNGtoPixels(fromPngFile);
+            PixelsToStringList(ref lines);
+            SaveToFile(in lines, toTextFile);
+
+            
+        }
+
+        private void SaveToFile(in List<string> strings, string toFile)
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter(toFile);
+
+                foreach (string l in strings)
+                {
+                    sw.WriteLine(l);
+                    Console.WriteLine(l);
+                }
+
+                sw.Close();
+            }
+            catch (Exception e) { }
+        }
+
+        private void PNGtoPixels(string nameFile)
+        {
             Color _c;
-            using (Bitmap image = new Bitmap(fromPngFile))
+            using (Bitmap image = new Bitmap(nameFile))
             {
                 for (int y = 0; y < image.Height; y++)
                 {
@@ -30,8 +57,10 @@ namespace PNGppSkript.Decompiler
                     }
                 }
             }
+        }
 
-            List<string> lines = new List<string>();
+        private void PixelsToStringList(ref List<string> lines)
+        {
             string line = "";
             for (int i = 0; i < pixels.Count; i++)
             {
@@ -40,7 +69,7 @@ namespace PNGppSkript.Decompiler
                 if (pixels[i] == ColorsT.Int)
                 {
                     line = "addInt ";
-                    line += BitConverter.ToInt32(getBytes(ref i,2,true,false,true)); //[pixels[++i].R, pixels[i].B, pixels[++i].R, pixels[i].B]
+                    line += BitConverter.ToInt32(getBytes(ref i, 2, true, false, true)); //[pixels[++i].R, pixels[i].B, pixels[++i].R, pixels[i].B]
                 }
                 else if (pixels[i] == ColorsT.Byte)
                 {
@@ -58,26 +87,8 @@ namespace PNGppSkript.Decompiler
                     byte[] t = getBytesString(ref i);
                     line += Encoding.Unicode.GetString(t);
                 }
-
-
-
-
-                    lines.Add(line);
+                lines.Add(line);
             }
-
-            try
-            {
-                StreamWriter sw = new StreamWriter(toTextFile);
-
-                foreach (string l in lines)
-                {
-                    sw.WriteLine(l);
-                    Console.WriteLine(l);
-                }
-
-                sw.Close();
-            }
-            catch (Exception e) {}
         }
 
         private byte[] getBytes(ref int from, int countPixel, bool r, bool g, bool b)

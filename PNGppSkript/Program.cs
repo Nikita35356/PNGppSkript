@@ -11,6 +11,7 @@ Console.WriteLine("бебебе");
 t.AddByte(2);
 t.AddVoid();
 t.AddString("hello");
+t.AddDouble(3.000978);
 t.DebugGenerate("./tt.png");
 
 Decompiler d = new Decompiler();
