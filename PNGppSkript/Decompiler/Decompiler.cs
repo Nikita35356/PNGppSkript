@@ -13,14 +13,25 @@ namespace PNGppSkript.Decompiler
     class Decompiler
     {
         private List<Color> pixels = new List<Color>();
-        public void DecompilPNG(string fromPngFile, string toTextFile)
+        public void DecompilPNGtoFile(string fromPngFile, string toTextFile)
         {
             List<string> lines = new List<string>();
             PNGtoPixels(fromPngFile);
             PixelsToStringList(ref lines);
             SaveToFile(in lines, toTextFile);
+        }
 
-            
+        public string DecompilPNGtoString(string fromPngFile)
+        {
+            List<string> lines = new List<string>();
+            PNGtoPixels(fromPngFile);
+            PixelsToStringList(ref lines);
+            string code = "";
+            foreach (string l in lines)
+            {
+                code += l;
+            }
+            return code;
         }
 
         private void SaveToFile(in List<string> strings, string toFile)
@@ -32,7 +43,6 @@ namespace PNGppSkript.Decompiler
                 foreach (string l in strings)
                 {
                     sw.WriteLine(l);
-                    Console.WriteLine(l);
                 }
 
                 sw.Close();
