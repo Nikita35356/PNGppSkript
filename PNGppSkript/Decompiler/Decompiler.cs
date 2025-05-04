@@ -30,6 +30,7 @@ namespace PNGppSkript.Decompiler
             foreach (string l in lines)
             {
                 code += l;
+                code += "\n";
             }
             return code;
         }
