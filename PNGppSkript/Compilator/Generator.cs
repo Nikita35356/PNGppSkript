@@ -8,7 +8,7 @@ namespace PNGppSkript.Compilator
 {
     class Generator
     {
-        public static void DebugGenerateAndSave(List<string> list, List<object> args, int maxWidth, string toFile)
+        public static void DebugGenerateAndSave(List<string> list, List<object?> args, int maxWidth, string toFile)
         {
             using (Bitmap image = new Bitmap(maxWidth, list.Count))
             {
