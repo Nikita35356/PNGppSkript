@@ -11,12 +11,4 @@ t.AddByte(2);
 t.DebugGenerate("C:\\Users\\COMP\\source\\repos\\Nikita35356\\PNGppSkript\\PNGppSkript\\ttt.png");
 
 
-            Thread hidePrintThread = new Thread(IDE.Program.Start);
-            hidePrintThread.SetApartmentState(ApartmentState.STA);
-            hidePrintThread.Start();
-
-        }
-    }
-}
-
 
