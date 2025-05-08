@@ -1,20 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.Text;
 using PNGppSkript.Compilator;
 using PNGppSkript.Decompiler;
 
-Console.WriteLine("Ты попался на кликбейт");
-
+List<string> list = new List<string>();
+//Specify the path to your file
+string file = "exit.txt";
+list.AddRange(File.ReadAllLines(file));
 Constructor t = new Constructor();
 
-Console.WriteLine("бебебе");
+foreach (string s in list)
+{
+    t.AddString(s);
+    t.DebugGenerate("./tt.png");
+}
 
-t.AddByte(2);
-t.AddVoid();
-t.AddString("hello");
-t.AddDouble(3.000978);
-t.DebugGenerate("./tt.png");
 
-Decompiler d = new Decompiler();
-d.DecompilPNGtoFile("./tt.png", "./exit.txt");
-Console.WriteLine(d.DecompilPNGtoString("./tt.png"));
 Console.ReadLine();
